@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((data) => {
                 if (data.status === "success") {
                     alert("Inscrição realizada com sucesso! Verifique seu e-mail.");
-                    window.location.href = "https://drive.google.com/file/d/1UDWUctroF3FG6WOT1V08iLg7GEYwKeKA/view?usp=drive_link";
+                    // Removi o redirecionamento para o PDF
                 } else {
                     alert("Ocorreu um erro. Tente novamente.");
                 }
