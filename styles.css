@@ -188,6 +188,31 @@ p {
     color: #00CC00;
 }
 
+/* Estilos para a mensagem de sucesso */
+#success-message {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: none; /* Inicialmente oculta */
+}
+
+#success-message p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Classe para exibir a mensagem */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
 /* Responsividade para mobile */
 @media (max-width: 768px) {
     .main-content {

@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Envio do formulário
     const form = document.getElementById("lead-form");
+    const successMessage = document.getElementById("success-message");
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -42,8 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status === "success") {
-                    alert("Inscrição realizada com sucesso! Verifique seu e-mail.");
-                    // Removi o redirecionamento para o PDF
+                    successMessage.classList.remove("hidden"); // Exibe a mensagem de sucesso
+                    successMessage.classList.add("visible"); // Garante que a mensagem seja exibida
+                    form.reset(); // Limpa o formulário
                 } else {
                     alert("Ocorreu um erro. Tente novamente.");
                 }
