@@ -1,0 +1,209 @@
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0;
+    overflow: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Margem maior no topo */
+}
+
+/* Animação do código caindo */
+.matrix-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Abaixo do conteúdo */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.matrix-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.matrix-character {
+    font-size: 18px;
+    color: #00FF00;
+    opacity: 0.8;
+    text-shadow: 0 0 5px #00FF00;
+    margin: 5px 0;
+}
+
+/* Seção principal */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    position: relative;
+    z-index: 1; /* Acima do código caindo */
+}
+
+/* Container do formulário */
+.form-container {
+    width: 45%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Estilos para o formulário */
+#lead-form {
+    width: 100%;
+}
+
+#lead-form .form-group {
+    margin: 20px 0;
+}
+
+#lead-form label {
+    display: block;
+    font-size: 1em;
+    color: #00FF00;
+    margin-bottom: 5px;
+}
+
+#lead-form input[type="text"],
+#lead-form input[type="email"],
+#lead-form input[type="tel"] {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #333;
+    border: 1px solid #00FF00;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+#lead-form input[type="text"]:focus,
+#lead-form input[type="email"]:focus,
+#lead-form input[type="tel"]:focus {
+    outline: none;
+    border-color: #00CC00;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+#lead-form button {
+    padding: 15px 30px;
+    background-color: #0a5f0a;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botão ocupa toda a largura */
+}
+
+#lead-form button:hover {
+    background-color: #00CC00;
+}
+
+/* Estilos para o asterisco (*) */
+.asterisk {
+    color: #00FF00;
+}
+
+/* Container da imagem */
+.image-container {
+    width: 45%;
+    padding: 20px;
+}
+
+.image-container img {
+    width: 100%; /* A imagem ocupa 100% da largura do container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+/* Rodapé */
+.footer {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Acima do código caindo */
+}
+
+.footer-content img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #00FF00;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #00CC00;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Em blocos (um abaixo do outro) */
+    }
+
+    .form-container, .image-container {
+        width: 100%; /* Ocupa toda a largura */
+        padding: 10px;
+    }
+
+    .image-container img {
+        height: auto; /* Altura automática para mobile */
+    }
+
+    body {
+        padding-top: 40px; /* Margem menor no topo para mobile */
+    }
+}
