@@ -44,9 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status === "success") {
-                    successMessage.classList.remove("hidden"); // Exibe a mensagem de sucesso
-                    successMessage.classList.add("visible"); // Garante que a mensagem seja exibida
+                    // Exibe a mensagem de sucesso
+                    successMessage.style.display = "block"; // Mostra a mensagem
                     form.reset(); // Limpa o formulário
+
+                    // Oculta a mensagem após 5 segundos (opcional)
+                    setTimeout(() => {
+                        successMessage.style.display = "none";
+                    }, 5000); // 5000 milissegundos = 5 segundos
                 } else {
                     alert("Ocorreu um erro. Tente novamente.");
                 }
