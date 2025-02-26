@@ -22,37 +22,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Envio do formulário
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("lead-form");
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-    
-            const nome = document.getElementById("nome").value;
-            const email = document.getElementById("email").value;
-            const whatsapp = document.getElementById("whatsapp").value;
-    
-            // URL do Google Apps Script (substitua pela sua URL)
-            const scriptURL = "https://script.google.com/macros/s/AKfycbwmT4rMMzyg7n2C0f2v-HJw6dEBkzS_QLwdrcX28MnMbXCFVQNnoa_X8o43W7gndvcSmw/exec";
-    
-            // Usando GET com parâmetros na URL
-            const url = `${scriptURL}?nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(whatsapp)}`;
-    
-            fetch(url, {
-                method: "GET",
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.status === "success") {
-                        alert("Inscrição realizada com sucesso! Verifique seu e-mail.");
-                        window.location.href = "https://drive.google.com/file/d/1UDWUctroF3FG6WOT1V08iLg7GEYwKeKA/view?usp=drive_link";
-                    } else {
-                        alert("Ocorreu um erro. Tente novamente.");
-                    }
-                })
-                .catch((error) => {
-                    console.error("Erro:", error);
+    const form = document.getElementById("lead-form");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const whatsapp = document.getElementById("whatsapp").value;
+
+        // URL do Google Apps Script (substitua pela sua URL)
+        const scriptURL = "https://script.google.com/macros/s/AKfycbwmT4rMMzyg7n2C0f2v-HJw6dEBkzS_QLwdrcX28MnMbXCFVQNnoa_X8o43W7gndvcSmw/exec";
+
+        // Usando GET com parâmetros na URL
+        const url = `${scriptURL}?nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(whatsapp)}`;
+
+        fetch(url, {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === "success") {
+                    alert("Inscrição realizada com sucesso! Verifique seu e-mail.");
+                    window.location.href = "https://drive.google.com/file/d/1UDWUctroF3FG6WOT1V08iLg7GEYwKeKA/view?usp=drive_link";
+                } else {
                     alert("Ocorreu um erro. Tente novamente.");
-                });
-        });
+                }
+            })
+            .catch((error) => {
+                console.error("Erro:", error);
+                alert("Ocorreu um erro. Tente novamente.");
+            });
     });
 });
