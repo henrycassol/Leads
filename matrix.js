@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const whatsapp = document.getElementById("whatsapp").value;
     
             // URL do Google Apps Script (substitua pela sua URL)
-            const scriptURL = "https://script.google.com/macros/s/AKfycbzYZY1S3-H5QbIlWExXXsrjruTDbkOsHW7vr-rxBYjm/exec";
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwmT4rMMzyg7n2C0f2v-HJw6dEBkzS_QLwdrcX28MnMbXCFVQNnoa_X8o43W7gndvcSmw/exec";
     
             // Usando GET com parâmetros na URL
             const url = `${scriptURL}?nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(whatsapp)}`;
